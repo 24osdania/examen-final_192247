@@ -1,0 +1,31 @@
+.bg-purple {
+  background: linear-gradient(90deg, #a855f7, #6b21a8);
+}
+
+.card {
+  border-radius: 14px;
+}
+
+.dark-mode {
+  background-color: #1b1b1b !important;
+  color: white !important;
+}
+
+.dark-mode .card {
+  background-color: #2a2a2a !important;
+  color: white !important;
+}
+
+.dark-mode .navbar {
+  background: #3b0764 !important;
+}
+
+.dark-mode .list-group-item {
+  background-color: #2d2d2d !important;
+  color: white !important;
+}
+
+.dark-mode .list-group-item.active {
+  background-color: #9333ea !important;
+  border-color: #9333ea !important;
+}
