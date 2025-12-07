@@ -84,7 +84,7 @@ document.addEventListener("DOMContentLoaded", () => {
     document.getElementById("inputDescription").value = user.description || "";
   }
 
-  // -------------------- DARK MODE --------------------
+  
   const darkToggle = document.getElementById("toggleDark");
 
   if (darkToggle) {
@@ -105,7 +105,6 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 });
 
-// -------------------- CAMBIO DE SECCIONES --------------------
 function showSection(id) {
   const sections = ["home", "profile", "settings"];
 
