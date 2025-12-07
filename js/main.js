@@ -1,4 +1,3 @@
-// -------------------- LOGIN --------------------
 document.addEventListener("DOMContentLoaded", () => {
   const loginForm = document.getElementById("loginForm");
 
@@ -10,7 +9,6 @@ document.addEventListener("DOMContentLoaded", () => {
         loginForm.classList.add("was-validated");
         return;
       }
-
       const email = document.getElementById("email").value.trim();
       const password = document.getElementById("password").value.trim();
 
@@ -26,29 +24,25 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 });
 
-// -------------------- DASHBOARD --------------------
 document.addEventListener("DOMContentLoaded", () => {
   if (!window.location.pathname.includes("dashboard.html")) return;
 
   let user = JSON.parse(sessionStorage.getItem("user"));
   if (!user) window.location.href = "index.html";
 
-  // Mostrar datos en la parte superior
   document.getElementById("userEmail").textContent = user.email;
   document.getElementById("userName").textContent = user.name || user.email.split("@")[0];
 
-  // HOME – cargar valores
   document.getElementById("userEmailHome").textContent = user.email;
   document.getElementById("userNameHome").textContent = user.name || "Sin registrar";
   document.getElementById("userDescriptionHome").textContent = user.description || "Sin descripción";
 
-  // Logout
+
   document.getElementById("logoutBtn").addEventListener("click", () => {
     sessionStorage.removeItem("user");
     window.location.href = "index.html";
   });
 
-  // PERFIL – guardar cambios
   const profileForm = document.getElementById("profileForm");
 
   if (profileForm) {
@@ -65,12 +59,10 @@ document.addEventListener("DOMContentLoaded", () => {
         return;
       }
 
-      // Guardar
       user.name = nameInput.value.trim();
       user.description = descInput.value.trim();
       sessionStorage.setItem("user", JSON.stringify(user));
 
-      // Actualizar en pantalla
       document.getElementById("userName").textContent = user.name;
       document.getElementById("userNameHome").textContent = user.name;
       document.getElementById("userDescriptionHome").textContent = user.description;
@@ -79,12 +71,10 @@ document.addEventListener("DOMContentLoaded", () => {
       msg.className = "text-success mt-2";
     });
 
-    // Cargar datos al abrir sección
     document.getElementById("inputName").value = user.name || "";
     document.getElementById("inputDescription").value = user.description || "";
   }
 
-  
   const darkToggle = document.getElementById("toggleDark");
 
   if (darkToggle) {
